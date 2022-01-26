@@ -1,0 +1,19 @@
+<% include ('layout/header') %> 
+<h1 class="table">Manage Users</h1>
+<table class="table">
+    <thead>
+        <th>id</th>
+        <th>email</th>
+        <th>role</th>
+    </thead>
+    <tbody>
+        <% users.forEach(user => { %>
+         <tr>
+             <td> <%= user.id %>  </td>
+             <td><a href="/admin/user/<%= user.id %>"><%= user.email %></a> </td>
+             <td><%= user.role %> </td>
+         </tr>
+        <% }) %>
+    </tbody>
+</table>
+<% include  ('layout/footer')%> 
